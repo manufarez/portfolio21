@@ -1,0 +1,16 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+ .rainbow {
+  background: rgb(240,82,82);
+  background: linear-gradient(90deg, rgba(240,82,82,1) 3%, rgba(250,202,21,1) 33%, rgba(49,196,141,1) 66%, rgba(28,100,242,1) 97%);
+ }
+ .rainbow:active {
+  opacity: 100%;
+ }
+ .cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
+ }
+}

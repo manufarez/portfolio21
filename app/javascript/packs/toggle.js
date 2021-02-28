@@ -9,38 +9,48 @@ document.addEventListener('turbolinks:load', () => {
   //   element.classList.toggle("dark");
   // }
   let darkMode = localStorage.getItem("darkMode");
+  localStorage.setItem("darkMode", "enabled");
   const darkModeToggle = document.getElementById("switcher");
+  const lightModeSwitcher = document.getElementById("light-mode")
+  const darkModeSwitcher = document.getElementById("dark-mode")
 
   //check if darmode is enabled
   //if enabled, turn off
-  //if disabled, turn on
+  const disableDarkMode = () => {
+    //Remove class darkmode to the body
+    document.body.classList.remove("dark");
+    // Hide dark-mode icon
+    darkModeSwitcher.classList.add("hidden")
+    // Show light-mode icon
+    lightModeSwitcher.classList.remove("hidden")
+    // Update darkmode in the local storage
+    localStorage.setItem("darkMode", "disabled");
+  }
 
+  //if disabled, turn on
   const enableDarkMode = () => {
     //Add class darkmode to the body
     document.body.classList.add("dark");
+    // Hide light-mode icon
+    lightModeSwitcher.classList.add("hidden")
+    // Show dark-mode icon
+    darkModeSwitcher.classList.remove("hidden")
     // Update darkmode in the local storage
     localStorage.setItem("darkMode", "enabled");
   }
 
-  const disableDarkMode = () => {
-    //Remove class darkmode to the body
-    document.body.classList.remove("dark");
-    // Update darkmode in the local storage
-    localStorage.setItem("darkMode", null);
-  }
-
-
-
-  if (darkMode === "enabled") {
-    enableDarkMode();
+  if (darkMode === "disabled") {
+    disableDarkMode();
   }
 
   darkModeToggle.addEventListener("click", () => {
     darkMode = localStorage.getItem("darkMode");
     if (darkMode !== "enabled") {
       enableDarkMode();
+      console.log(darkMode);
     } else {
       disableDarkMode();
+      console.log(darkMode);
     }
   })
 });

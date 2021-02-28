@@ -14,3 +14,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require("stylesheets/application.scss")
+require("packs/toggle")

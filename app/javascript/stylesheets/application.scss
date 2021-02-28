@@ -10,7 +10,7 @@
  .rainbow:active {
   opacity: 100%;
  }
- .cryptedmail:after {
-  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
- }
+ // .cryptedemail:after {
+ //  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
+ // }
 }

@@ -1,0 +1,40 @@
+<div class="h-screen dark:bg-black">
+  <%= render 'home/toggle' %>
+  <div class="px-8 mx-auto mb-12 max-w-4xl pt-12">
+
+      <div id="notice" class="text-center">
+        <div class="p-2 bg-cod-gray-light items-center text-gray-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+          <span class="flex rounded-full bg-gray-600 uppercase px-2 py-1 text-xs font-bold mr-3">👍</span>
+          <span class="font-semibold mr-2 text-left flex-auto">
+            <%= notice %>
+          </span>
+        </div>
+      </div>
+
+    <div class="mb-14 transition duration-500 ease-in-out transform hover:-translate-x-1"><%= link_to '<- Back', root_path, class:"dark:text-gray-500" %></div>
+
+    <div class="mx-auto max-w-3xl">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-5xl font-bold dark:text-white"><%= @project.title %></h3>
+        <div class="inline-block">
+          <%= link_to 'Edit', edit_project_path(@project), class:"focus:outline-none text-gray-500 text-xs py-1.5 px-3 rounded-lg border border-gray-500 dark:hover:bg-cod-gray-light dark:hover:text-gray-300 dark:hover:border-gray-300" %>
+        </div>
+      </div>
+      <div class="mb-5">
+        <span class="bg-cod-gray-light px-4 py-2 rounded-xl text-gray-500 mr-1"><%= @project.tags %></span>
+      </div>
+      <p class="text-xl leading-loose dark:text-white pb-16">
+        <%= @project.intro %>
+      </p>
+    </div>
+
+
+    <div class="mx-auto max-w-4xl text-lg leading-loose dark:text-white">
+      <%= @project.body %>
+    </div>
+
+
+    <div class="mt-24 transition duration-500 ease-in-out transform hover:-translate-x-1"><%= link_to '<- Back', root_path, class:"dark:text-gray-500" %></div>
+  </div>
+    <%= render 'home/footer' %>
+</div>

@@ -15,8 +15,13 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      black: '#111111',
-      blacksofter: '#1F1F1F',
+      'cod-gray': {
+        DEFAULT: '#181818',
+        'light': '#1F1F1F',
+        'medium': '#333333',
+        'dark': '#0A0A0A'
+      },
+      black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
       red: colors.red,
@@ -759,7 +764,7 @@ module.exports = {
     clear: ['responsive'],
     container: ['responsive'],
     cursor: ['responsive'],
-    display: ['responsive'],
+    display: ['responsive', 'dark'],
     divideColor: ['responsive', 'dark'],
     divideOpacity: ['responsive', 'dark'],
     divideStyle: ['responsive'],

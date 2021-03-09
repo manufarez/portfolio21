@@ -15,3 +15,4 @@ ActiveStorage.start()
 
 require("stylesheets/application.scss")
 require("packs/toggle")
+require("packs/accordion")

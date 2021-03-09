@@ -1,0 +1,5 @@
+import { Application } from "stimulus"
+import Reveal from "stimulus-reveal-controller"
+
+const application = Application.start()
+application.register("reveal", Reveal)

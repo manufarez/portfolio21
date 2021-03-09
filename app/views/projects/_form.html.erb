@@ -10,28 +10,48 @@
       </ul>
     </div>
   <% end %>
+    <div data-controller="reveal" data-reveal-hidden-class="hidden">
+      <div data-action="click->reveal#toggle" class="px-4 py-3 bg-gray-200 bg-gray-200 text-gray-600 uppercase text-xs font-bold leading-normal rounded-t-lg">
+        <% if current_page?(controller: 'projects', action: 'index') %>
+          <h3>Create new project</h3>
+        <% else %>
+          <h3>Edit project</h3>
+        <% end %>
+      </div>
+      <div data-reveal-target="item" class="hidden py-3 px-6 bg-white space-y-3 rounded-b-lg shadow-md">
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+        <div>
+          <label for="company_website" class="block text-sm font-medium text-gray-600">
+            <%= form.label :title %>
+          </label>
+          <div class="mt-1 flex shadow-sm">
+            <%= form.text_field :title, class:"focus:ring-indigo-500 focus:border-indigo-500 flex-1 block rounded-md w-full sm:text-sm border-gray-300" %>
+          </div>
+        </div>
+        <div>
+          <label for="intro" class="block text-sm font-medium text-gray-600">
+             <%= form.label :intro %>
+          </label>
+          <div class="mt-1">
+            <%= form.text_area :intro, class:"shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" %>
+          </div>
+        </div>
+        <div>
+          <label for="body" class="block text-sm font-medium text-gray-600">
+            <%= form.label :body %>
+          </label>
+          <div class="mt-1">
+            <%= form.text_area :body, class:"h-64 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" %>
+          </div>
+        </div>
+        <div class="text-right pt-3 pb-2">
+          <% unless current_page?(controller: 'projects', action: 'index') %>
+            <%= link_to '<- Back', projects_path, class:"inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" %>
+          <% end %>
 
-    <div class="field">
-    <%= form.label :tags %>
-    <%= form.text_field :tags %>
-  </div>
+          <%= form.submit nil, class:"inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-700 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"  %>
 
-  <div class="field">
-    <%= form.label :intro %>
-    <%= form.text_area :intro %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+        </div>
+      </div>
+    </div>
 <% end %>

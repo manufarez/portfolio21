@@ -18,25 +18,29 @@ document.addEventListener('turbolinks:load', () => {
   //if enabled, turn off
   const disableDarkMode = () => {
     //Remove class darkmode to the body
-    document.body.classList.remove("dark");
+    document.documentElement.classList.remove("dark");
     // Hide dark-mode icon
     darkModeSwitcher.classList.add("hidden")
     // Show light-mode icon
     lightModeSwitcher.classList.remove("hidden")
     // Update darkmode in the local storage
     localStorage.setItem("darkMode", "disabled");
+    // Set background color to white
+    document.documentElement.style.backgroundColor = "white";
   }
 
   //if disabled, turn on
   const enableDarkMode = () => {
     //Add class darkmode to the body
-    document.body.classList.add("dark");
+    document.documentElement.classList.add("dark");
     // Hide light-mode icon
     lightModeSwitcher.classList.add("hidden")
     // Show dark-mode icon
     darkModeSwitcher.classList.remove("hidden")
     // Update darkmode in the local storage
     localStorage.setItem("darkMode", "enabled");
+    // Set background color to black
+    document.documentElement.style.backgroundColor = "#111";
   }
 
   if (darkMode === "disabled") {

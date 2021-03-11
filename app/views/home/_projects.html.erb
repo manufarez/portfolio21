@@ -6,7 +6,7 @@
   <% Project.all.each do |project| %>
     <%= link_to project do %>
       <div class="group mb-2 hover:bg-gray-100 dark:hover:bg-cod-gray-light px-8 py-6 md:rounded-xl">
-        <span class="text-xs uppercase tracking-wide text-gray-400 font-medium dark:text-gray-600"><%= project.tags %></span>
+        <span class="text-xs uppercase tracking-wide text-gray-400 font-medium dark:text-gray-600"><%= raw project.tags.map(&:name).join(', ') %></span>
         <h4 class="text-3xl font-bold mb-3 text-gray-800 dark:text-gray-200"><%= project.title %></h4>
         <p class="text-gray-500 mb-3 dark:text-gray-200"><%= project.intro %></p>
         <div class="transition duration-500 ease-in-out transform group-hover:translate-x-1">

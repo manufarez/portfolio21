@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="dark" style="background: #111">
   <head>
     <title>Portfolio21</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,7 +12,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="dark">
+  <body class="flex flex-col h-screen">
+    <%= render 'layouts/header' if @full_layout %>
     <%= yield %>
+    <%= render 'layouts/footer' if @full_layout %>
   </body>
 </html>

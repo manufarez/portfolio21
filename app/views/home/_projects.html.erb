@@ -4,7 +4,7 @@
     <h2 class="font-extrabold text-4xl text-gray-900 dark:text-gray-100">Recent projects</h2>
   </div>
   <% Project.all.each do |project| %>
-    <%= link_to project do %>
+    <%= link_to project_slug_path(project) do %>
       <div class="group mb-2 hover:bg-gray-100 dark:hover:bg-cod-gray-light px-8 py-6 md:rounded-xl">
         <span class="text-xs uppercase tracking-wide text-gray-400 font-medium dark:text-gray-600"><%= raw project.tags.map(&:name).join(', ') %></span>
         <h4 class="text-3xl font-bold mb-3 text-gray-800 dark:text-gray-200"><%= project.title %></h4>

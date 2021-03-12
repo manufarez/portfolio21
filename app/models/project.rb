@@ -1,6 +1,9 @@
 class Project < ApplicationRecord
+
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+  extend FriendlyId
+    friendly_id :title, use: :slugged
 
   def self.tagged_with(name)
     Tag.find_by!(name: name).projects

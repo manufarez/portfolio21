@@ -1,18 +1,20 @@
 <% if notice %>
-  <div id="notice" class="text-center">
-    <div class="p-2 bg-cod-gray-light items-center text-gray-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
-      <span class="flex rounded-full bg-gray-600 px-2 py-1 text-xs mr-3">👍</span>
-      <span class="font-semibold mr-2 text-left flex-auto">
+  <div id="notice" class="text-center mb-6">
+    <div class="p-2 bg-gray-500 items-center text-gray-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+      <span class="flex rounded-full bg-gray-400 px-2 py-1 text-xs mr-3">👍
+      </span>
+      <span class="mr-2 text-left flex-auto text-sm font-medium">
         <%= notice %>
       </span>
     </div>
   </div>
 <% end %>
 <% if alert %>
-    <div id="notice" class="text-center">
-    <div class="p-2 bg-cod-gray-light items-center text-gray-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
-      <span class="flex rounded-full bg-gray-600 px-2 py-1 text-xs mr-3">👎</span>
-      <span class="font-semibold mr-2 text-left flex-auto">
+  <div id="notice" class="text-center mb-6">
+    <div class="p-2 bg-gray-500 items-center text-gray-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+      <span class="flex rounded-full bg-gray-600 px-2 py-1 text-xs mr-3">👎
+      </span>
+      <span class="mr-2 text-left flex-auto text-xs font-medium">
         <%= alert %>
       </span>
     </div>

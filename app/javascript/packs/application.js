@@ -7,7 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/css/all.css"
+import "tailwindcss/tailwind.css"
 
 Rails.start()
 Turbolinks.start()
@@ -15,4 +16,6 @@ ActiveStorage.start()
 
 require("stylesheets/application.scss")
 require("packs/toggle")
-require("packs/accordion")
+
+require("trix")
+require("@rails/actiontext")

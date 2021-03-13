@@ -21,8 +21,8 @@ module.exports = {
         'medium': '#333333',
         'dark': '#0A0A0A'
       },
-      black: colors.black,
-      white: colors.white,
+      black: '#111',
+      white: '#FBFDFE',
       gray: colors.coolGray,
       red: colors.red,
       yellow: colors.amber,

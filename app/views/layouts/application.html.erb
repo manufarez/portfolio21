@@ -12,7 +12,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="flex flex-col h-screen">
+  <body class="flex flex-col min-h-screen bg-white dark:bg-black">
     <%= render 'layouts/header' if @full_layout %>
     <%= yield %>
     <%= render 'layouts/footer' if @full_layout %>

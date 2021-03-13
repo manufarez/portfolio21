@@ -26,7 +26,7 @@ document.addEventListener('turbolinks:load', () => {
     // Update darkmode in the local storage
     localStorage.setItem("darkMode", "disabled");
     // Set background color to white
-    document.documentElement.style.backgroundColor = "white";
+    document.documentElement.style.backgroundColor = "#FAFDFE";
   }
 
   //if disabled, turn on

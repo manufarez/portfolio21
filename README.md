@@ -8,6 +8,6 @@
 
 `application.html.erb` must be modified in order to make Tailwind.css work...
 
-⋅⋅⋅In __development (default):__ `<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>`
+- In __development (default):__ `<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>`
 
-⋅⋅⋅In __production :__ `<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>`
+- In __production :__ `<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>`

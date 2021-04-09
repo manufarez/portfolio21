@@ -1,0 +1,5 @@
+meta_product_name: "Manuel Farez"
+meta_title: "Manu Farez - Web bricolage & other services"
+meta_description: "From (re)designing & prototyping ideas, to end-to-end application development and marketing-related consultations, I bring projects to life or make them run smoother through occasional creative epiphanies, programming magic and lots of elbow grease."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@manufarez"   # required for Twitter Cards

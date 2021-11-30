@@ -30,7 +30,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="flex flex-col min-h-screen bg-white dark:bg-black">
+  <body class="flex flex-col min-h-screen bg-white dark:bg-black" id="<%= request.path.starts_with?('/projects') ? '' : 'bg' %>">
     <%= render 'layouts/header' if @full_layout %>
     <%= yield %>
     <%= render 'layouts/footer' if @full_layout %>

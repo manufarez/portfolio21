@@ -47,18 +47,16 @@ document.addEventListener('turbolinks:load', () => {
     disableDarkMode();
   }
 
-  darkModeToggle.addEventListener("click", () => {
-    darkMode = localStorage.getItem("darkMode");
-    if (darkMode !== "enabled") {
-      enableDarkMode();
-      console.log(darkMode);
-    } else {
-      disableDarkMode();
-      console.log(darkMode);
-    }
-  })
+  if (document.getElementById('bg')) {
+    darkModeToggle.addEventListener("click", () => {
+      darkMode = localStorage.getItem("darkMode");
+      if (darkMode !== "enabled") {
+        enableDarkMode();
+        console.log(darkMode);
+      } else {
+        disableDarkMode();
+        console.log(darkMode);
+      }
+    })
+  }
 });
-
-
-
-

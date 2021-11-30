@@ -253,7 +253,7 @@ PLATFORMS
 
 DEPENDENCIES
   animate.css-rails (~> 3.2)
-  aws-sdk-s3
+  aws-sdk-s3 (~> 1)
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)

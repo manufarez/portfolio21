@@ -18,3 +18,4 @@ require("stylesheets/application.scss")
 require("packs/toggle")
 
 require("trix")
+require("@rails/actiontext")

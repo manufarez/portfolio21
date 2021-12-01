@@ -17,8 +17,4 @@ ActiveStorage.start()
 require("stylesheets/application.scss")
 require("packs/toggle")
 
-var Trix = require("trix")
-require("@rails/actiontext")
-
-Trix.config.attachments.preview.caption.name = true
-Trix.config.attachments.preview.caption.size = false
+require("trix")

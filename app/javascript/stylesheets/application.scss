@@ -3,6 +3,14 @@
 @import "tailwindcss/utilities";
 @import "trix/dist/trix";
 
+.trix-content img {
+  margin: auto;
+}
+
+figcaption {
+  margin-top: 0.8rem!important;
+}
+
 @layer utilities {
  // .rainbow {
  //  background: rgb(240,82,82);

@@ -8,13 +8,15 @@ module.exports = {
     './app/javascript/**/*.js',
   ],
   options: {
-    safelist: [
-    'hover:opacity-80',
-    'hover:-translate-y-0.5',
-    'transform',
-    'transition',
-    'active:opacity-10'
-    ]
+    safelist: {
+      standard: [
+        'hover:opacity-80',
+        'hover:-translate-y-0.5',
+        'transform',
+        'transition',
+        'active:opacity-10'
+      ]
+    }
   },
   presets: [],
   darkMode: 'class', // or 'media' or 'class'

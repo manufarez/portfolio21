@@ -18,9 +18,9 @@
         </ul>
       </div>
     <% end %>
-    <div class="mt-1"><%= f.input :position, label_html: { class: 'block text-sm font-medium text-gray-600' }, input_html: { class: 'mt-1 focus:ring-gray-700 focus:border-gray-700 flex-1 block rounded-md w-full sm:text-sm border py-2 px-3 border-gray-300', min: '0', step: '1' }  %>
+    <div class="mt-1"><%= f.input :position, label_html: { class: 'block text-sm font-medium text-gray-600' }, input_html: { class: 'mt-1 focus-visible:ring-gray-700 focus:ring-gray-700 focus:border-gray-700 flex-1 block rounded-md w-full sm:text-sm border py-2 px-3 border-gray-300', min: '0', step: '1' }  %>
     </div>
-    <div class="mt-1"><%= f.input :title, label_html: { class: 'block text-sm font-medium text-gray-600' }, input_html: { class: 'mt-1 focus:ring-gray-700 focus:border-gray-700 flex-1 block rounded-md w-full sm:text-sm border py-2 px-3	border-gray-300'} %>
+    <div class="mt-1"><%= f.input :title, label_html: { class: 'block text-sm font-medium text-gray-600' }, input_html: { class: 'mt-1 focus-visible:ring-gray-700 focus:ring-gray-700 focus:border-gray-700 flex-1 block rounded-md w-full sm:text-sm border py-2 px-3	border-gray-300'} %>
     </div>
 
     <div class="mt-4"><%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, label_html: { class: 'block text-sm font-medium text-gray-600' }, input_html: { multiple: true, class: 'shadow-sm focus:ring-gray-700 focus:border-gray-700 mt-1 block w-full sm:text-sm border-gray-300 rounded-md' } %>
@@ -34,7 +34,7 @@
 
     <div class="pt-2 pb-2 mt-3 text-right">
       <% unless current_page?(controller: 'projects', action: 'index') %>
-        <%= link_to '<- Back', projects_path, class:"inline-flex justify-center py-2 px-4 mr-1 border border-transparent shadow-sm text-sm font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" %>
+        <%= link_to '← Back', projects_path, class:"inline-flex justify-center py-2 px-4 mr-1 border border-transparent shadow-sm text-sm font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" %>
       <% end %>
       <%= f.submit nil, class: 'inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-700 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500' %>
     </div>

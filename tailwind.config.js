@@ -7,13 +7,15 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
   ],
-  safelist: [
+  options: {
+    safelist: [
     'hover:opacity-80',
     'hover:-translate-y-0.5',
     'transform',
     'transition',
     'active:opacity-10'
-  ],
+    ]
+  },
   presets: [],
   darkMode: 'class', // or 'media' or 'class'
   theme: {

@@ -7,9 +7,7 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
   ],
-  safelist: [
-    "[type='text']"
-  ],
+  layers: ['base'],
   presets: [],
   darkMode: 'class', // or 'media' or 'class'
   theme: {

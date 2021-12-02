@@ -7,7 +7,19 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
   ],
-  layers: ['base'],
+  safelist: [
+    'string',
+    'optional',
+    'mt-1',
+    'focus:ring-gray-700',
+    'focus:border-gray-700',
+    'flex-1',
+    'block',
+    'rounded-md',
+    'w-full',
+    'sm:text-sm',
+    'border-gray-300'
+  ],
   presets: [],
   darkMode: 'class', // or 'media' or 'class'
   theme: {

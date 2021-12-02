@@ -4,6 +4,7 @@ class Project < ApplicationRecord
   has_many :tags, through: :taggings
   has_rich_text :body
   validates_presence_of :position, message: "can't be blank"
+  validates_presence_of :title, message: "can't be blank"
 
   extend FriendlyId
     friendly_id :title, use: :slugged

@@ -1,6 +1,6 @@
 let environment = {
   plugins: [
-    require('tailwindcss'),
+    require('tailwindcss')('./app/tailwind.config.js'),
     require('autoprefixer'),
     require('postcss-import'),
     require('postcss-flexbugs-fixes'),
@@ -21,8 +21,7 @@ if (process.env.RAILS_ENV === "production") {
         './app/**/*.html.erb',
         './app/javascript/stylesheets/extra.scss',
         './app/helpers/**/*.rb',
-        './app/javascript/**/*.js',
-        'tailwind.config.js'
+        './app/javascript/**/*.js'
       ],
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
     })

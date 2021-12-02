@@ -1,6 +1,6 @@
 <figure class="attachment attachment--<%= blob.representable? ? "preview" : "file" %> attachment--<%= blob.filename.extension %> animated fadeInUp">
   <% if blob.representable? %>
-    <%= image_tag blob, class:"m-auto" %>
+    <%= image_tag blob, class:"m-auto", loading: "lazy" %>
   <% end %>
 
   <% if user_signed_in? %>

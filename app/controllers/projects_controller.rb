@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    params[:tag] ? @projects = Project.tagged_with(params[:tag]) : @projects = Project.all
+    params[:tag] ? @projects = Project.tagged_with(params[:tag]).sort_by(&:position) : @projects = Project.all.sort_by(&:position)
   end
 
   # GET /projects/1 or /projects/1.json
@@ -68,6 +68,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:title, :intro, :body, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+      params.require(:project).permit(:position, :title, :intro, :body, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
 end

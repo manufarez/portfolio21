@@ -22,6 +22,7 @@ if (process.env.RAILS_ENV === "production") {
         './app/javascript/stylesheets/extra.scss',
         './app/helpers/**/*.rb',
         './app/javascript/**/*.js',
+        'tailwind.config.js'
       ],
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
     })

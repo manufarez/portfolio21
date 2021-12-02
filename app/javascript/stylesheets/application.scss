@@ -3,8 +3,13 @@
 @import "tailwindcss/utilities";
 @import "trix/dist/trix";
 
-.trix-content img {
-  margin: auto;
+.trix-content {
+  img {
+    margin: auto;
+  }
+  a {
+    text-decoration: underline;
+  }
 }
 
 figcaption {

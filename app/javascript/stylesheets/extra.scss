@@ -39,8 +39,15 @@ figcaption {
 }
 
  .rainbow:active {
-  opacity: 100%;
+  opacity: 0.1;
  }
+
+ .rainbow:hover {
+  opacity: 0.8;
+  transform: translateY(-0.125rem);
+  transition: transform 0.2s;
+  }
+
  // .cryptedemail:after {
  //  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
  // }

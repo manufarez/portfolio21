@@ -7,9 +7,6 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
   ],
-  options: {
-    safelist: [/^hover/, /^active/]
-  },
   presets: [],
   darkMode: 'class', // or 'media' or 'class'
   theme: {

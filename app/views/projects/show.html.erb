@@ -33,3 +33,6 @@
     <div class="mt-24 transition duration-500 ease-in-out transform hover:-translate-x-1"><%= link_to '← Back', root_path, class:"text-gray-400 dark:text-gray-500" %></div>
   </div>
 </div>
+
+<% content_for :meta_title, "#{@project.title}" %>
+<% content_for :meta_description, @project.intro %>

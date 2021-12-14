@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    params[:tag] ? @projects = Project.tagged_with(params[:tag]).sort_by(&:position) : @projects = Project.all.sort_by(&:position)
+    params[:tag] ? @projects = Project.tagged_with(params[:tag]).sort_by(&:position).reverse : @projects = Project.all.sort_by(&:position).reverse
   end
 
   # GET /projects/1 or /projects/1.json

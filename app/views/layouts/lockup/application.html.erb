@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="dark" style="background: #111" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale = 1.0,maximum-scale = 1.0,user-scalable=no" />
+    <title>Protected project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <%= favicon_link_tag asset_path('favicon.png') %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-white dark:bg-black" id="<%= request.path.starts_with?('/projects') ? '' : 'bg' %>">
+    <%= render 'layouts/header' if @full_layout %>
+    <%= yield %>
+    <%= render 'layouts/footer' if @full_layout %>
+  </body>
+</html>

@@ -1,5 +1,4 @@
 class Project < ApplicationRecord
-
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   has_rich_text :body

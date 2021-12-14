@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Lockup::Engine, at: '/lockup'
   devise_for :users
 
   match "/404", to: "errors#not_found", via: :all

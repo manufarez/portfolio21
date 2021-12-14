@@ -1,0 +1,27 @@
+<div class="m-auto dark:text-gray-50">
+  <div class="-mt-28">
+    <h1 class="mb-6 text-2xl font-bold md:text-5xl dark:text-gray-50">🔒 This project is protected</h1>
+    <p class="mb-4 text-lg font-medium md:text-2xl" >This project is protected for confidentiality reasons.</p>
+      <form class="mt-8 space-y-6" action="#" method="POST">
+        <div class="flex justify-center mt-16 mb-16 text-center rounded-md">
+          <div>
+            <%= form_for :lockup, url: { action: 'unlock' } do |form| %>
+              <% unless @wrong == true %>
+                <p><%= form.password_field "codeword", placeholder: "Password", autofocus: true, class:'sr-only relative block w-full px-3 py-5 text-gray-900 placeholder-gray-500 border border-gray-300 rounded appearance-none dark:text-gray-50 dark:bg-black focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm lg:text-lg' %></p>
+              <% else %>
+                <p><%= form.password_field "codeword", value: @codeword, class: 'sr-only relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded appearance-none dark:text-gray-50 dark:bg-black focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm lg:text-lg', autofocus: true %></p>
+              <% end %>
+                <% if params[:return_to].present? %>
+                  <%= form.hidden_field "return_to", value: params[:return_to] %>
+                <% elsif @return_to.present? %>
+                  <%= form.hidden_field "return_to", value: @return_to %>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+      </form>
+      <div class="transition duration-500 ease-in-out transform hover:translate-x-2">
+        <a href="https://www.manufarez.com/"><span class="font-medium text-gray-400 text-md md:text-xl">← <span class="underline">Go back</span> to main page.</span></a>
+      </div>
+  </div>
+</div>

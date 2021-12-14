@@ -2,6 +2,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:show]
+  before_action :check_for_lock, only: [:show]
 
   # GET /projects or /projects.json
   def index
@@ -12,13 +13,6 @@ class ProjectsController < ApplicationController
   def show
     @full_layout = true
     @project = Project.friendly.find(params[:id])
-    if @project.private?
-      if params[:password] == 'Herbert'
-        @project = Project.friendly.find(params[:id])
-      else
-        render template: "projects/lock"
-      end
-    end
   end
 
   # GET /projects/new
@@ -64,6 +58,17 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def check_for_lock
+    if @project.private?
+      return unless respond_to?(:lockup) && lockup_codeword
+      return if cookies && cookies[:lockup].present? && cookies[:lockup] == lockup_codeword.to_s.downcase
+      redirect_to lockup.unlock_path(
+        return_to: request.fullpath.split('?lockup_codeword')[0],
+        lockup_codeword: params[:lockup_codeword]
+      )
     end
   end
 

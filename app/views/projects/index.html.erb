@@ -11,6 +11,7 @@
             <th class="px-6 py-3 text-left">Title</th>
             <th class="px-6 py-3 text-left">Tags</th>
             <th class="px-6 py-3 text-left">Intro</th>
+            <th class="px-6 py-3 text-left">Private ?</th>
             <th class="px-6 py-3 text-left">Actions</th>
           </tr>
         </thead>
@@ -22,6 +23,7 @@
               <td class="px-6 py-3 text-sm font-medium text-left text-gray-600 whitespace-nowrap"><%= project.title %></td>
               <td class="px-6 py-3 text-sm text-left text-gray-600 whitespace-nowrap"><%= project.tags.map(&:name).join(', ') %></td>
               <td class="px-6 py-3 text-sm text-left text-gray-600"><%= truncate(project.intro, length: 150) %></td>
+              <td class="px-6 py-3 text-sm text-left text-gray-600 whitespace-nowrap"><%= project.private? ? 'Private' : 'Public' %></td>
               <td class="px-6 py-3 text-center">
                 <div class="flex items-center justify-center text-sm text-gray-600 item-center">
                   <%= link_to project_slug_path(project) do %><i class="w-4 mr-2 transform fas fa-eye hover:text-gray-500 hover:scale-105"></i><% end %>

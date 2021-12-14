@@ -12,6 +12,13 @@ class ProjectsController < ApplicationController
   def show
     @full_layout = true
     @project = Project.friendly.find(params[:id])
+    if @project.private?
+      if params[:password] == 'Herbert'
+        @project = Project.friendly.find(params[:id])
+      else
+        render template: "projects/lock"
+      end
+    end
   end
 
   # GET /projects/new
@@ -68,6 +75,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:position, :title, :intro, :body, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+      params.require(:project).permit(:position, :private, :title, :intro, :body, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
 end

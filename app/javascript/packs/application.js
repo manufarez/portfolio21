@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all.css"
 import "tailwindcss/tailwind.css"
+import 'highlight'
 
 Rails.start()
 Turbolinks.start()

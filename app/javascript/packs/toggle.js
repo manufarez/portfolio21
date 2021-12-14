@@ -1,5 +1,3 @@
-console.log("custom js file loaded")
-
 document.addEventListener('turbolinks:load', () => {
   // var switcher = document.getElementById('switcher');
   // switcher.addEventListener('click', toggleSwitch);

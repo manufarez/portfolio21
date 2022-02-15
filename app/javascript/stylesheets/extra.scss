@@ -64,3 +64,10 @@ figcaption {
     transition: transform 0.2s ease-in-out;
   }
 }
+
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, br::selection, div::selection, img::selection, a::selection, span::selection, p::selection {
+  background: #d8b4fe; /* WebKit/Blink Browsers */
+}
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, br::selection, div::selection, img::selection, a::selection, span::selection, p::selection {
+  background: #d8b4fe; /* Gecko Browsers */
+}
